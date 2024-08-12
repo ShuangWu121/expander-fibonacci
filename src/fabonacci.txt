@@ -1,0 +1,50 @@
+fabonacci circuit 2 layers and 2 copies
+
+Circuit { 
+    layers: [
+        CircuitLayer { 
+            input_var_num: 2, 
+            output_var_num: 2, 
+            input_vals: MultiLinearPoly {
+                 var_num: 0, evals: [] 
+                 }, 
+            output_vals: MultiLinearPoly { 
+                var_num: 0, evals: [] 
+                }, 
+            mul: [], 
+            add: [
+                Gate { i_ids: [0], o_id: 1, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [1], o_id: 1, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [1], o_id: 0, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [2], o_id: 3, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [3], o_id: 3, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [3], o_id: 2, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }
+                ]
+            const_: [], 
+            uni: [] 
+            }, 
+        CircuitLayer { 
+            input_var_num: 2, 
+            output_var_num: 2, 
+            input_vals: MultiLinearPoly { 
+                var_num: 0, 
+                evals: [] 
+                }, 
+            output_vals: MultiLinearPoly { 
+                var_num: 0, 
+                evals: [] 
+                }, 
+            mul: [], 
+            add: [
+                Gate { i_ids: [0], o_id: 1, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [1], o_id: 1, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [1], o_id: 0, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [2], o_id: 3, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [3], o_id: 3, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }, 
+                Gate { i_ids: [3], o_id: 2, coef: 0x0000000000000000000000000000000000000000000000000000000000000001, is_random: false, gate_type: 1 }
+                ], 
+            const_: [], 
+            uni: [] }], 
+            rnd_coefs_identified: false, 
+            rnd_coefs: [] 
+            }

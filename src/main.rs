@@ -78,7 +78,7 @@ fn build_fibonacci(layernumber: usize,copynumber: usize)->Circuit<BN254Config>{
 fn main(){
 
    //sometime, the same parameter that run successfully can cause overflow problem with bad proof, donnot know why
-   let mut circuit=build_fibonacci(5, 50);
+   let mut circuit=build_fibonacci(2, 2);
 
 
    println!("circuit generated as \n {:?}",circuit);
