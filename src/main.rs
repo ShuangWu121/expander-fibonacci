@@ -9,7 +9,30 @@ use sha2::Digest;
 use rand::Rng;
 
 
-//build fibonacci circuit with layernumber layers and copynumber of copies
+///build fibonacci circuit with "layernumber" layers and "copynumber" of copies
+/// example circuit of 2 layers and 2 copies
+/// 
+/// 
+/// 
+/// layer 2 outputs:[00]   [01]    [10]    [11]
+///                  |      |        |      |
+///                 Add    Add      Add    Add
+///                    \  / |          \  / | 
+///                     \/  |           \/  |
+///                     /\  |           /\  |
+///                    /  \ |          /  \ |
+/// layer 1 inputs: [00]   [01]    [10]    [11]
+///                  |      |        |      |
+///                 Add    Add      Add    Add
+///                    \  / |          \  / | 
+///                     \/  |           \/  |
+///                     /\  |           /\  |
+///                    /  \ |          /  \ |
+/// layer 0 inputs: [00]  [01]     [10]   [11]
+/// 
+/// 
+/// 
+
 fn build_fibonacci(layernumber: usize,copynumber: usize)->Circuit<BN254Config>{
     let mut circuit=Circuit::default();
     let mut l0=CircuitLayer::<BN254Config>::default();
@@ -54,8 +77,8 @@ fn build_fibonacci(layernumber: usize,copynumber: usize)->Circuit<BN254Config>{
 
 fn main(){
 
-   
-   let mut circuit=build_fibonacci(2, 20);
+   //sometime, the same parameter that run successfully can cause overflow problem with bad proof, donnot know why
+   let mut circuit=build_fibonacci(5, 50);
 
 
    println!("circuit generated as \n {:?}",circuit);
