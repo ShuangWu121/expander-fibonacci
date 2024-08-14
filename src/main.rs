@@ -75,6 +75,34 @@ fn build_fibonacci(layernumber: usize,copynumber: usize)->Circuit<BN254Config>{
    
 }
 
+
+
+///build fibonacci circuit with roundnumber of rounds
+/// example circuit of 2 layers and 2 copies
+/// 
+/// 
+/// 
+/// layer 2 outputs:            [00]   [01]           [10][11]
+///                              |       |             |    |
+///                             Add     Add           Add  Add
+///                             /  \    /             / \  /     
+///                            /    \  /             /   \/   
+///                           /      \/             /    /\ 
+///                          /       /\            /    /  \
+///                         /       /  neg        /    /    neg
+///                        /       /    \        /    /      \
+/// layer 1 inputs:     [000]    [001]  [010][011][100]       [101]
+///                       |        |      |    |    |           |
+///                      Add      Add    Add  Add  Add         Add
+///                       /\      /\      \  / |    /\          |
+///                      /  \    /  \      \/  |   /  \         |
+///                     /    \  neg  \     /\  |  neg  \        |
+///                    /      \/      \   /  \ | /      \       |
+/// layer 0 inputs: [000]    [001]    [010]  [011]       [100] [101]   
+/// inputs           x0       y0       x1     y1          x2     y2
+/// 
+/// 
+
 fn build_parallel_fibonacci(roundsnumber: usize)->Circuit<BN254Config>{
     let mut circuit=Circuit::default();
     let mut l0=CircuitLayer::<BN254Config>::default();
