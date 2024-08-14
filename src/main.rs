@@ -226,14 +226,15 @@ fn main(){
    let mut x=<BN254Config as GKRConfig>::SimdCircuitField::one();
    let mut y=<BN254Config as GKRConfig>::SimdCircuitField::one();
    
+   //generate fibonacci sequence as inputs
    circuit.layers[0].input_vals.evals = (0..(1 << circuit.log_input_size()))
    .flat_map(|_| {
        let x_next = y;
        let y_next = x + y;
 
-       let result = vec![x, x_next]; // Collect (x, y) values for the current round
+       let result = vec![x, x_next];
 
-       // Update x and y for the next iteration
+    
        x = x_next;
        y = y_next;
 
