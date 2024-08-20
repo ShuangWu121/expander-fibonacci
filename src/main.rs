@@ -7,6 +7,7 @@ use sha2::Digest;
 
 
 use rand::Rng;
+mod fibnacciSequence;
 
 
 ///build fibonacci circuit with "layernumber" layers and "copynumber" of copies
@@ -78,7 +79,7 @@ fn build_fibonacci(layernumber: usize,copynumber: usize)->Circuit<BN254Config>{
 
 
 ///build fibonacci circuit with roundnumber of rounds
-/// example circuit of 2 layers and 2 copies
+/// example circuit of 3 rounds
 /// 
 /// 
 /// 
